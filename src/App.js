@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './components/Home';
 import UserProfile from './components/UserProfile';
 import LogIn from "./components/Login";
+import Credits from "./components/Credits";
 
 
 class App extends Component {
@@ -18,6 +19,36 @@ class App extends Component {
       }
     }
   }
+
+  componentDidMount() {
+    this.fetchCreditData();
+  }
+
+  fetchCreditData() {
+    fetch(`https://moj-api.herokuapp.com/credits`)
+      .then((response) => response.json())
+      .then((response) => {
+        this.setState({ creditData: response });
+        response.map((item) =>
+          this.setState({
+            accountBalance: this.state.accountBalance + item.amount,
+          })
+        );
+      })
+
+      .catch((error) => console.error(error));
+  }
+
+  updateCreditData = (data) => {
+    let arr = this.state.creditData;
+    arr.unshift(data);
+    this.setState({
+      creditData: arr,
+      accountBalance: this.state.accountBalance + data.amount,
+    });
+  };
+
+
 
   mockLogIn = (logInInfo) => {
     const newUser = {...this.state.currentUser}
@@ -50,6 +81,7 @@ class App extends Component {
                 <Route exact path="/" element={<Home accountBalance={this.state.accountBalance}/>}/>
                 <Route exact path="/userProfile" element={<UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince} />}/>
                 <Route exact path="/login" element={<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props} />}/>
+                <Route exact path="/credits" element={<Credits accountBalance={this.state.accountBalance} creditData={this.state.creditData} updateCreditData={this.updateCreditData} />}/>
             </Routes>
         </Router>
       );
