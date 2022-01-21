@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/bank-of-react/static/css/main.e6c13ad2.css",
-    "main.js": "/bank-of-react/static/js/main.d63ea641.js",
-    "static/js/787.a0815656.chunk.js": "/bank-of-react/static/js/787.a0815656.chunk.js",
-    "index.html": "/bank-of-react/index.html",
-    "main.e6c13ad2.css.map": "/bank-of-react/static/css/main.e6c13ad2.css.map",
-    "main.d63ea641.js.map": "/bank-of-react/static/js/main.d63ea641.js.map",
-    "787.a0815656.chunk.js.map": "/bank-of-react/static/js/787.a0815656.chunk.js.map"
+    "main.css": "/TTP-Assignment9/static/css/main.e6c13ad2.css",
+    "main.js": "/TTP-Assignment9/static/js/main.42e23895.js",
+    "static/js/787.a0815656.chunk.js": "/TTP-Assignment9/static/js/787.a0815656.chunk.js",
+    "index.html": "/TTP-Assignment9/index.html",
+    "main.e6c13ad2.css.map": "/TTP-Assignment9/static/css/main.e6c13ad2.css.map",
+    "main.42e23895.js.map": "/TTP-Assignment9/static/js/main.42e23895.js.map",
+    "787.a0815656.chunk.js.map": "/TTP-Assignment9/static/js/787.a0815656.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.d63ea641.js"
+    "static/js/main.42e23895.js"
   ]
 }
